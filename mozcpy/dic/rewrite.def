@@ -1,0 +1,6 @@
+[unigram rewrite]
+*  $1
+[left rewrite]
+*  $1
+[right rewrite]
+*  $1
