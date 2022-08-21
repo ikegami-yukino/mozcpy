@@ -45,7 +45,7 @@ jobs:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
           command: pytest --cov test_mozcpy.py
-      - coveralls/upload
+      - codecov/upload
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -55,4 +55,4 @@ workflows:
     jobs:
       - build-and-test
       - checkout
-      - codecov
+      - codecov/upload
