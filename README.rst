@@ -1,6 +1,6 @@
 mozcpy
 ==========
-|circleci| |coveralls| |pyversion| |version| |license|
+|circleci| |pyversion| |version| |license|
 
 Mozc for Python: yet another Kana-Kanji converter
 
@@ -47,10 +47,6 @@ This module relies on Mozc and MeCab.
 
 .. |circleci| image:: https://dl.circleci.com/status-badge/img/gh/ikegami-yukino/mozcpy/tree/master.svg?style=svg
         :target: https://dl.circleci.com/status-badge/redirect/gh/ikegami-yukino/mozcpy/tree/master
-
-.. |coveralls| image:: https://coveralls.io/repos/ikegami-yukino/mozcpy/badge.svg?branch=master&service=github
-    :target: https://coveralls.io/github/ikegami-yukino/mozcpy?branch=master
-    :alt: coveralls.io
 
 .. |pyversion| image:: https://img.shields.io/pypi/pyversions/mozcpy.svg
 
