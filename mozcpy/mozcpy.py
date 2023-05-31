@@ -4,7 +4,7 @@ import os
 import MeCab
 
 DICT_DIR = os.path.join(os.path.dirname(__file__), 'dic')
-MECAB_ARGS = '-d %s' % DICT_DIR
+MECAB_ARGS = '-d "%s"' % DICT_DIR
 
 
 class Converter(object):
