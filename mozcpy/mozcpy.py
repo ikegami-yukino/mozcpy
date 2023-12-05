@@ -5,7 +5,7 @@ import MeCab
 
 DICT_DIR = os.path.join(os.path.dirname(__file__), 'dic')
 MECAB_ARGS = '-d %s' % DICT_DIR
-MECAB_ARGS += "-r /dev/null" if os.name == "posix" else "-r nul"
+MECAB_ARGS += ' -r /dev/null' if os.name == "posix" else ' -r nul'
 if os.sep == '\\':
     MECAB_ARGS = MECAB_ARGS.replace('\\', '\\\\')
 
