@@ -1,6 +1,13 @@
 CHANGES
 =======
 
+0.2 (2023-12-11)
+-----------------
+
+- Update the dictionaries
+- Fix Windows MeCab args problem (thanks @Bye-lemon)
+- Support Python 3.11 and 3.12
+
 0.1.1 (2023-01-06)
 ------------------
 
