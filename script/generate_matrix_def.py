@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 import os
-import zlib
 
 ROOT_DIR = os.path.join(os.path.dirname(__file__), '../')
-CONNECTION_DEFLATE_PATH = os.path.join(ROOT_DIR,
-                                       'mozc/src/data/dictionary_oss/'
-                                       'connection.deflate')
+CONNECTION_DEFLATE_PATH = os.path.join(
+    ROOT_DIR, 'mozc/src/data/dictionary_oss/'
+    'connection_single_column.txt')
 MATRIX_DEF_PATH = os.path.join(ROOT_DIR, 'mozcpy/dic/matrix.def')
 
 
 def decompress_deflate(path):
-    with open(CONNECTION_DEFLATE_PATH, 'rb') as f:
-        return zlib.decompress(f.read()).decode()
+    with open(CONNECTION_DEFLATE_PATH, 'r') as f:
+        return f.read()
 
 
 def to_matrix(connections):

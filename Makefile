@@ -9,8 +9,8 @@ LEX_CSV = lex.csv
 all: install
 
 update_mozc:
-	git submodule init
-	git submodule update
+	git submodule foreach git fetch origin
+	git submodule foreach git reset --hard origin/master
 
 $(MATRIX_DEF):
 	./script/generate_matrix_def.py
