@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from codecs import open
 import os
-import pkgutil
+import importlib
 import re
 from setuptools import setup
 
-install_requires = [] if pkgutil.find_loader('MeCab') else ['mecab']
+install_requires = [] if importlib.util.find_spec('MeCab') else ['mecab']
 
 with open(os.path.join('mozcpy', '__init__.py'), 'r', encoding='utf8') as f:
     version = re.compile(r".*__version__ = '(.*?)'",
