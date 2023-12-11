@@ -31,13 +31,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Git LFS
-          command: git lfs install; git lfs pull
-      - run:
           name: Install MeCab
           command: |
             sudo apt-get update;
             sudo apt-get -y install mecab libmecab-dev mecab-ipadic-utf8
+      - run:
+          name: Git LFS
+          command: sudo apt-get install git-lfs; git lfs install; git lfs pull
       - python/install-packages:
           pkg-manager: pip
       - python/install-packages:
