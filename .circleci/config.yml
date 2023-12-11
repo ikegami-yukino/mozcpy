@@ -31,6 +31,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Git LFS
+          command: git lfs install; git lfs pull
+      - run:
           name: Install MeCab
           command: |
             sudo apt-get update;
