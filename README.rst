@@ -35,14 +35,19 @@ USAGE
   converter.wakati("もうなにもこわくない", n_best=10)  # duplicatetions are ignored
   # => ['もう なに も こわく ない']
 
+FOR DEVELOPER
+===============
+
+This module uses Git LFS to pull dictionary files.
+
 ACKNOWLEDGEMENT
 =================
 
 This module relies on Mozc and MeCab.
 
-- T. Kudo, T. Hanaoka, J. Mukai, Y. Tabata, H. Komatsu. 2011. Efficient dictionary and language model compression for input method editors. In Proceedings of the Workshop on Advances in Text Input Methods (WTIM 2011), pp 19-25.
+- . T. Kudo, T. Hanaoka, J. Mukai, Y. Tabata, H. Komatsu. 2011. Efficient dictionary and language model compression for input method editors. In Proceedings of the Workshop on Advances in Text Input Methods (WTIM 2011), pp 19-25.
 
-- T. Kudo, H. Komatsu, T. Hanaoka, A. Mukai, Y. Tabata, K. Yamamoto, Y. Matsumoto. 2004. Applying Conditional Random Fields to Japanese Morphological Analysis. In Proceedings of the EMNLP 2004, pp 230-237.
+- . T. Kudo, H. Komatsu, T. Hanaoka, A. Mukai, Y. Tabata, K. Yamamoto, Y. Matsumoto. 2004. Applying Conditional Random Fields to Japanese Morphological Analysis. In Proceedings of the EMNLP 2004, pp 230-237.
 
 
 .. |circleci| image:: https://dl.circleci.com/status-badge/img/gh/ikegami-yukino/mozcpy/tree/master.svg?style=svg
