@@ -53,3 +53,18 @@ def test_wakati():
     assert isinstance(actual, list)
     assert len(actual) == 1
     assert actual[0] == 'いけがみ です'
+
+
+def test_search_prefix():
+    converter = mozcpy.Converter()
+    actual = converter.search_prefix('いけがみ', n_best=20)
+    assert isinstance(actual, list)
+    assert len(actual) > 0
+    assert '池上' in actual
+
+
+def test_dict_version():
+    converter = mozcpy.Converter()
+    actual = converter.dict_version()
+    assert isinstance(actual, str)
+    assert len(actual) > 0

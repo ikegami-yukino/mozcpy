@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mozcpy"
+dynamic = ["version", "readme", "dependencies"]
+authors = [
+    {name = "Yukino Ikegami", email = "yknikgm@gmail.com"}
+]
+maintainers = [
+    {name = "Yukino Ikegami", email = "yknikgm@gmail.com"}
+]
+description = "Kana-Kanji Converter using Mozc dic"
+keywords = ["Kana-Kanji converter", "Mozc", "MeCab", "japanese", "JapaneseText"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Developers",
+    "Natural Language :: Japanese",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Topic :: Text Processing :: Linguistic",
+    "Topic :: Text Processing"
+]
+license-files = ["LICENSE"]
+
+[project.urls]
+Homepage = "https://github.com/ikegami-yukino/mozcpy"
+Repository = "https://github.com/ikegami-yukino/mozcpy.git"
+Changelog = "https://github.com/ikegami-yukino/mozcpy/blob/main/CHANGES.rst"
+
+[tool.setuptools]
+package-dir = {"mozcpy" = "mozcpy"}
+
+[tool.setuptools.dynamic]
+version = {attr = "mozcpy.__version__"}
+readme = {file = ["README.rst", "CHANGES.rst"]}
+
+[tool.setuptools.package-data]
+mozcpy = ["dic/*"]

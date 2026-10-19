@@ -1,8 +1,8 @@
 mozcpy
 ==========
-|circleci| |pyversion| |version| |license|
+|pyversion| |version| |license|
 
-Mozc for Python: yet another Kana-Kanji converter
+Mozc dictionary reader for Python: yet another Kana-Kanji converter
 
 INSTALLATION
 ==============
@@ -35,6 +35,17 @@ USAGE
   converter.wakati("もうなにもこわくない", n_best=10)  # duplicatetions are ignored
   # => ['もう なに も こわく ない']
 
+  converter.search_prefix("まどかま", n_best=1)
+  # => ['まどかマギカ']
+
+  converter.dict_version()  # version of included dictionary (Mozc repository's tag)
+  # => '3.34.6239'
+
+NOTE
+===============
+
+The author has no affiliation whatsoever with Google. Furthermore, the mozcpy is an unofficial project.
+
 FOR DEVELOPER
 ===============
 
@@ -45,13 +56,10 @@ ACKNOWLEDGEMENT
 
 This module relies on Mozc and MeCab.
 
-- . T. Kudo, T. Hanaoka, J. Mukai, Y. Tabata, H. Komatsu. 2011. Efficient dictionary and language model compression for input method editors. In Proceedings of the Workshop on Advances in Text Input Methods (WTIM 2011), pp 19-25.
+- T\. Kudo, T. Hanaoka, J. Mukai, Y. Tabata, H. Komatsu. 2011. Efficient dictionary and language model compression for input method editors. In Proceedings of the Workshop on Advances in Text Input Methods (WTIM 2011), pp 19-25.
 
-- . T. Kudo, H. Komatsu, T. Hanaoka, A. Mukai, Y. Tabata, K. Yamamoto, Y. Matsumoto. 2004. Applying Conditional Random Fields to Japanese Morphological Analysis. In Proceedings of the EMNLP 2004, pp 230-237.
+- T\. Kudo, H. Komatsu, T. Hanaoka, A. Mukai, Y. Tabata, K. Yamamoto, Y. Matsumoto. 2004. Applying Conditional Random Fields to Japanese Morphological Analysis. In Proceedings of the EMNLP 2004, pp 230-237.
 
-
-.. |circleci| image:: https://dl.circleci.com/status-badge/img/gh/ikegami-yukino/mozcpy/tree/master.svg?style=svg
-        :target: https://dl.circleci.com/status-badge/redirect/gh/ikegami-yukino/mozcpy/tree/master
 
 .. |pyversion| image:: https://img.shields.io/pypi/pyversions/mozcpy.svg
 

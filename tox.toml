@@ -1,0 +1,31 @@
+env_list =  ["format", "3.15", "3.15t", "3.14", "3.14t", "3.13", "3.13t", "3.12", "3.11", "3.10", "3.9"]
+parallel_show_output = true
+
+[env.format]
+description = "install ruff in a virtual environment and invoke it"
+deps = ["ruff>=0.14", "readme-renderer[md]"]
+skip_install = true
+allowlist_externals = ["bash", ]
+commands = [
+    [ "ruff", "check", "--select", "I", "--diff", "--fix", "mozcpy" ],
+    [ "ruff", "check", "--select", "I", "--diff", "--fix", "test_mozcpy.py" ],
+    [ "ruff", "check", "--select", "I", "--diff", "--fix", "setup.py" ],
+    [ "python", "-m", "readme_renderer", "README.rst", "-o", "/dev/null" ],
+    [ "python", "-m", "readme_renderer", "CHANGES.rst", "-o", "/dev/null" ]
+]
+
+[env.3.15t]
+deps = ["pytest-run-parallel"]
+commands = [["pytest", "--iterations=4", "--parallel-threads=auto", "test_mozcpy.py"]]
+
+[env.3.14t]
+deps = ["pytest-run-parallel"]
+commands = [["pytest", "--iterations=4", "--parallel-threads=auto", "test_mozcpy.py"]]
+
+[env.3.13t]
+deps = ["pytest-run-parallel"]
+commands = [["pytest", "--iterations=4", "--parallel-threads=auto", "test_mozcpy.py"]]
+
+[env_run_base]
+description = "run unit tests"
+commands = [["python", { replace = "posargs", default = ["test_mozcpy.py"], extend = true }]]

@@ -2,14 +2,14 @@
 import os
 
 ROOT_DIR = os.path.join(os.path.dirname(__file__), '../')
-CONNECTION_DEFLATE_PATH = os.path.join(
+CONNECTION_FILE_PATH = os.path.join(
     ROOT_DIR, 'mozc/src/data/dictionary_oss/'
     'connection_single_column.txt')
 MATRIX_DEF_PATH = os.path.join(ROOT_DIR, 'mozcpy/dic/matrix.def')
 
 
 def decompress_deflate(path):
-    with open(CONNECTION_DEFLATE_PATH, 'r') as f:
+    with open(CONNECTION_FILE_PATH, 'r') as f:
         return f.read()
 
 
@@ -25,7 +25,7 @@ def to_matrix(connections):
 
 
 def main():
-    connections = decompress_deflate(CONNECTION_DEFLATE_PATH)
+    connections = decompress_deflate(CONNECTION_FILE_PATH)
     connections = connections.splitlines()
     connection_matrix = to_matrix(connections)
     with open(MATRIX_DEF_PATH, 'w') as f:
